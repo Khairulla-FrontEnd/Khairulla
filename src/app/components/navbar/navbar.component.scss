@@ -1,0 +1,32 @@
+@import "../../../styles/dark-layout.scss";
+nav{
+    background: $light-bg;
+    @include dark-layout{
+        background: $dark-bg !important;
+    }
+    .active{
+        color:white !important;
+    }
+    .nav-link{
+        color:$light-1;
+        font-family:"Oswald",sans-serif;
+        padding-bottom:2px;
+    }
+    .nav-border-active{
+        width: 25px;
+        height:1.5px;
+        background-color: white;
+        border-radius:10px;
+        transition: all 0.3s ease;
+    }
+    .nav-border{
+        width: 0;
+        height: 1.5px;
+        background-color: $light-1;
+        border-radius: 10px;
+        transition:all 0.3s ease;
+    }
+    .nav-link:hover + .nav-border{
+        width:25px;
+    }
+}

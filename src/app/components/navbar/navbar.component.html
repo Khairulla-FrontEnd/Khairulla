@@ -1,0 +1,39 @@
+<nav class="navbar fixed-top navbar-expand-md bg-body-secondary">
+    <div class="container">
+      <a class="navbar-brand" role="button" (click)="reloadPage()">
+        @if (isLoading) {
+          <p-skeleton width="140px" height="30px"></p-skeleton>
+        }@else {
+          <img ngSrc="./assets/logo.png" alt="logo"
+           width="140" height="30"
+           priority>
+        }
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          @for (link of links; track $index) {
+            @if ($index === active) {
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{link}}</a>
+                <div class="nav-border-active"></div>
+              </li>
+            }@else {
+              <li class="nav-item">
+                <a class="nav-link" href="#">{{link}}</a>
+                <div class="nav-border"></div>
+              </li>
+            }
+          }
+        </ul>
+        <p-button 
+        label="Download CV"
+        severity="contrast"
+        icon="pi pi-download"
+        iconPos="right"
+        ></p-button>
+      </div>
+    </div>
+  </nav>
