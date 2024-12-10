@@ -1,3 +1,4 @@
+
 @mixin dark-layout {
     ::ng-deep html[data-bs-theme="dark"] & {
         @content;
@@ -10,4 +11,7 @@
 
 $light-bg:linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(162,70,252,1) 100%);
 $dark-bg:#39155d;
-$light-1:#c626f7;
+$light-1:#d577f2;
+$light-2:#a246fc;
+$standart:"Oswald", sans-serif;
+$title:"Parkinsans",serif;

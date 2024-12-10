@@ -1,0 +1,19 @@
+@import '../../../styles/dark-layout.scss';
+
+#home{
+    padding-top:65px;
+    background:$light-bg;
+    @include dark-layout{
+        background:$dark-bg;
+    }
+    .position-absolute{
+        top:-90px;
+        right:-40px;
+    }
+}
+@media (max-width:992px){
+    .hero-img{
+        width:274px;
+        height:365px;
+    }
+}

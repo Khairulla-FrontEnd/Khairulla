@@ -1,13 +1,9 @@
 <nav class="navbar fixed-top navbar-expand-md bg-body-secondary">
     <div class="container">
       <a class="navbar-brand" role="button" (click)="reloadPage()">
-        @if (isLoading) {
-          <p-skeleton width="140px" height="30px"></p-skeleton>
-        }@else {
           <img ngSrc="./assets/logo.png" alt="logo"
            width="140" height="30"
            priority>
-        }
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,23 +13,50 @@
           @for (link of links; track $index) {
             @if ($index === active) {
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">{{link}}</a>
+                <a class="nav-link standart active" aria-current="page"
+                 [href]="'#'+link
+                 .split(' ')
+                 .join('')
+                 .toLowerCase()"
+                 (click)="setActive($index)"
+                 >{{link}}</a>
                 <div class="nav-border-active"></div>
               </li>
             }@else {
               <li class="nav-item">
-                <a class="nav-link" href="#">{{link}}</a>
+                <a class="nav-link standart"
+                 [href]="'#'+link
+                 .split(' ')
+                 .join('')
+                 .toLowerCase()"
+                 (click)="setActive($index)"
+                 >{{link}}</a>
                 <div class="nav-border"></div>
               </li>
             }
           }
         </ul>
-        <p-button 
-        label="Download CV"
-        severity="contrast"
-        icon="pi pi-download"
-        iconPos="right"
-        ></p-button>
+        <div class="d-flex align-items-center gap-3">
+          <p-select-button
+          size="small"
+          [options]="themeOptions"
+          [(ngModel)]="service.value"
+          optionLabel="label"
+          optionValue="value"
+          (ngModelChange)="service.changeTheme($event)"
+          >
+        <ng-template #item let-item>
+          <i [class]="item.icon"></i>
+        </ng-template>
+        </p-select-button>
+          <p-button 
+          [raised]="true"
+          label="Download CV"
+          severity="help"
+          icon="pi pi-download"
+          iconPos="right"
+          />
+        </div>
       </div>
     </div>
   </nav>
