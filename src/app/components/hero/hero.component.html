@@ -15,11 +15,14 @@
                     </p>
                 </div>
             </div>
-            <div class="position-relative"
-            [@moveStop]="service.isOpen ? 'close' : 'open'">
-                <img ngSrc="./assets/hero.jpg" alt="hero-img"
-                 width="320" height="426"
-                 class="rounded-circle img-thumbnail hero-img" priority>
+            <div style="height:426px">
+                <div [@moveStop]="service.isOpen ? 'close' : 'open'"
+                class="overflow-hidden">
+                    <img ngSrc="./assets/hero.jpg" alt="hero-img"
+                    width="320" height="426"
+                    class="rounded-circle img-thumbnail hero-img"
+                    priority>
+                </div>
             </div>
         </div>
     </div>

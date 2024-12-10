@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavbarComponent } from "./components/navbar/navbar.component";
-import { NavbarService } from './components/navbar/navbar.service';
 import { HeroComponent } from "./components/hero/hero.component";
 
 @Component({
@@ -11,5 +10,5 @@ import { HeroComponent } from "./components/hero/hero.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent{
-  navbarService = inject(NavbarService);
+  
 }

@@ -1,9 +1,8 @@
-import { AfterViewInit, Component, inject } from "@angular/core";
+import { Component, inject, OnInit, Output } from "@angular/core";
 import { NgOptimizedImage } from "@angular/common";
 import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
-import { NavbarService } from './navbar.service';
 
 @Component({
     selector:'app-navbar',
@@ -18,9 +17,7 @@ import { NavbarService } from './navbar.service';
     ]
 })
 
-export class NavbarComponent implements AfterViewInit{  
-    service = inject(NavbarService);
-    isLoading:boolean = true;
+export class NavbarComponent implements OnInit{
     active:number = 0;
     links:string[] = ['HOME','ABOUT ME','WORK', 'CONTACT'];
     themeOptions:{ label:string,value:string,icon:string }[] = [
@@ -35,11 +32,16 @@ export class NavbarComponent implements AfterViewInit{
             icon:'pi pi-moon',
         },
     ];
-    reloadPage():void{
+    value:string | null = '';
+    ngOnInit(): void {
+        this.value = localStorage.getItem('theme');
+    }
+    changeTheme(theme:string){
+        localStorage.setItem('theme',theme);
         window.location.reload();
     }
-    ngAfterViewInit(): void {
-        this.isLoading = false;
+    reloadPage():void {
+        window.location.reload();
     }
     setActive(index:number):void{
         this.active = index;

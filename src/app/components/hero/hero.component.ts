@@ -23,11 +23,11 @@ import { HeroService } from './hero.service';
             transition('close => open',[animate('1s')])
         ]),
         trigger('moveStop',[
-            state('open',style({
-                right:'-300px'
-            })),
             state('close',style({
-                right:0
+                height:new HeroService().height
+            })),
+            state('open',style({
+                height:0
             })),
             transition('open => close',[animate('1s')]),
             transition('close => open',[animate('1s')])

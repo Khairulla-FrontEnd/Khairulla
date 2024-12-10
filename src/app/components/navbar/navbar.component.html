@@ -40,10 +40,10 @@
           <p-select-button
           size="small"
           [options]="themeOptions"
-          [(ngModel)]="service.value"
+          [(ngModel)]="value"
           optionLabel="label"
           optionValue="value"
-          (ngModelChange)="service.changeTheme($event)"
+          (ngModelChange)="changeTheme($event)"
           >
         <ng-template #item let-item>
           <i [class]="item.icon"></i>

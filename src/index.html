@@ -9,5 +9,11 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    const theme = localStorage.getItem('theme');
+    const app = document.getElementById('app');
+    document.querySelector('html').setAttribute('data-bs-theme',theme);
+    app.setAttribute('class',theme + '-mode');
+  </script>
 </body>
 </html>
