@@ -35,6 +35,9 @@ export class NavbarComponent implements OnInit{
     value:string | null = '';
     ngOnInit(): void {
         this.value = localStorage.getItem('theme');
+        if(!this.value){
+            this.value = 'light';
+        }
     }
     changeTheme(theme:string){
         localStorage.setItem('theme',theme);
