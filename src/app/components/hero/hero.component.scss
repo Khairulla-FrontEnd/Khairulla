@@ -2,6 +2,7 @@
 
 #home{
     padding-top:65px;
+    overflow-x:hidden;
     background:$light-bg;
     @include dark-layout{
         background:$dark-bg;
@@ -9,6 +10,9 @@
     .position-absolute{
         top:-90px;
         right:-40px;
+    }
+    .hero-text{
+        overflow:hidden;
     }
 }
 @media (max-width:992px){

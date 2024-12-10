@@ -1,18 +1,22 @@
 <section id="home">
     <div class="container">
         <div class="d-flex justify-content-around align-items-center">
-            <div class="position-relative">
-                <div class="position-absolute display-2">
-                    👋🏻
+            <div class="d-flex">
+                <div class="position-relative 
+                hero-text" [@openClose]="service.isOpen ? 'open' : 'close'">
+                    <div class="position-absolute display-2">
+                        👋🏻
+                    </div>
+                    <h1 class="title display-2 fw-bold m-0 text-nowrap">
+                        Khairulla
+                    </h1>
+                    <p class="standart fs-3 text-nowrap">
+                        Front-end Developer
+                    </p>
                 </div>
-                <h1 class="title display-2 fw-bold m-0">
-                    Khairulla
-                </h1>
-                <p class="standart fs-3">
-                    Front-end Developer
-                </p>
             </div>
-            <div>
+            <div class="position-relative"
+            [@moveStop]="service.isOpen ? 'close' : 'open'">
                 <img ngSrc="./assets/hero.jpg" alt="hero-img"
                  width="320" height="426"
                  class="rounded-circle img-thumbnail hero-img" priority>
