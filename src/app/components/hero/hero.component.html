@@ -1,6 +1,6 @@
 <section id="home">
     <div class="container">
-        <div class="d-flex justify-content-around align-items-center">
+        <div class="d-flex justify-content-around align-items-center hero">
             <div class="d-flex">
                 <div class="position-relative 
                 hero-text" [@openClose]="service.isOpen ? 'open' : 'close'">
@@ -15,9 +15,9 @@
                     </p>
                 </div>
             </div>
-            <div style="height:426px">
+            <div style="height:426px" class="hero-img-wrapper">
                 <div [@moveStop]="service.isOpen ? 'close' : 'open'"
-                class="overflow-hidden">
+                class="overflow-hidden hero-img-container">
                     <img ngSrc="./assets/hero.jpg" alt="hero-img"
                     width="320" height="426"
                     class="rounded-circle img-thumbnail hero-img"

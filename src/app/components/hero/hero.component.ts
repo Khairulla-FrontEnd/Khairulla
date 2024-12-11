@@ -38,6 +38,9 @@ import { HeroService } from './hero.service';
 export class HeroComponent implements AfterViewInit{
     service = inject(HeroService);
     ngAfterViewInit(): void {
+        if(window.innerWidth > 768){
+            this.service.height = '365px'
+        }
         this.service.isOpen = true;
     }
 }

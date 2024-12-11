@@ -12,3 +12,7 @@
 .title{
     font-family:$title;
 }
+.center{
+    display: grid;
+    place-items:center;
+}

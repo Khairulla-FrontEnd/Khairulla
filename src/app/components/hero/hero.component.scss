@@ -12,12 +12,33 @@
         right:-40px;
     }
     .hero-text{
-        overflow:hidden;
+        overflow:clip;
+        overflow-clip-margin: 90px;
     }
 }
 @media (max-width:992px){
     .hero-img{
         width:274px;
         height:365px;
+    }
+    .hero-img-wrapper{
+        height:365px !important;
+    }
+    .position-absolute{
+        top:-60px !important;
+    }
+}
+@media (max-width:768px){
+    .hero{
+        flex-direction: column-reverse;
+    }
+    .hero-text{
+        text-align:center;
+    }
+    .hero-img-wrapper{
+        margin-bottom:20px;
+    }
+    .position-absolute{
+        top:-50px !important;
     }
 }
