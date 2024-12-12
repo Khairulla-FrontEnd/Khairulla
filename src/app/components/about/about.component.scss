@@ -5,13 +5,8 @@
     background:$light-bg;
     .container{
         max-width:1024px;
-        @media (max-width:992px){
-            .standart{
-                text-wrap: wrap !important;
-                br{
-                    display:none;
-                }
-            }
+        .standart{
+            max-height: 100px;
         }
     }
     @include dark-layout{
