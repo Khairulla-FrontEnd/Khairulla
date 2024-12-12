@@ -6,10 +6,10 @@
 <div class="center overflow-hidden"
 [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
 >
-    <div class="row row-cols-2 justify-content-center" appDetect (isVisible)="Detect($event)">
+    <div class="row row-cols-sm-2 row-cols-1 justify-content-center" appDetect (isVisible)="Detect($event)">
         @for (skill of skills; track $index) {
             @if($index == skills.length){
-                <div class="col">
+                <div class="col-sm col-auto">
                     <a [href]="skill.link" target="_blank">
                         <i class="pi pi-cloud position-relative"
                         role="button">
@@ -20,7 +20,7 @@
                     </a>
                 </div>
             }@else {
-                <div class="col">
+                <div class="col-sm col-auto">
                     <a [href]="skill.link" target="_blank">
                         <i class="pi pi-cloud position-relative"
                         role="button">

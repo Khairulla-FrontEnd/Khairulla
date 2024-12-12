@@ -7,23 +7,45 @@
     animation-iteration-count: infinite;
     transition:all 0.3s ease;
     font-size:230px;
+    @media (max-width:768px) {
+        font-size:180px;
+        animation-name:moveCloudSlow;
+        animation-duration:3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transition: all 0.3s ease;
+        @keyframes moveCloudSlow {
+            0% {
+              transform: translateX(0px);
+            }
+            50% {
+              transform: translateX(20px);
+            }
+            100% {
+              transform: translateX(0px);
+            }
+        }
+    }
     .bx{
         font-size:80px;
         transform: translate(-50%,-50%);
         top:50%;left:45%;
+        @media (max-width:768px){
+            font-size: 50px;
+        }
     }
 }
 .pi-cloud:hover{
     color:$light-2;
 }
 @keyframes moveCloud {
-    0%{
-        transform: translateX(0px);
+    0% {
+      transform: translateX(0px);
     }
-    50%{
-        transform: translateX(60px);
+    50% {
+      transform: translateX($translate-value);
     }
-    100%{
-        transform: translateX(0px);
+    100% {
+      transform: translateX(0px);
     }
 }

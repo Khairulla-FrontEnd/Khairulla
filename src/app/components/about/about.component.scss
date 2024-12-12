@@ -7,6 +7,13 @@
         max-width:1024px;
         .standart{
             max-height: 100px;
+            @media (max-width:768px){
+                max-height:fit-content;
+            }
+            @media (max-width:576px){
+                font-size:14px !important;
+                padding-inline:0 !important;
+            }
         }
     }
     @include dark-layout{

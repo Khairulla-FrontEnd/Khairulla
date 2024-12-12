@@ -1,7 +1,7 @@
 <section id="about">
     <div class="container">
         <div class="card mb-3" appDetect (isVisible)="Detect($event)">
-            <div class="mb-4 card-header"
+            <div class="card-header"
             [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
             >
                 <h1 class="display-6 text-nowrap fw-bold title text-center overflow-hidden">
