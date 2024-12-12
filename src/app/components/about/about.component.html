@@ -1,45 +1,27 @@
 <section id="about">
     <div class="container">
-        <div class="card mb-3">
-            <h1 class="display-6 fw-bold title text-center mb-4 card-header">
-                About me
-            </h1>
-            <div class="card-body">
-                <p class="standart about-text px-5 fs-5">
-                    I've been interested in coding for over a year. I’ve learned the basics of front-end development and continue to move forward. During this time, I’ve created many web templates and ensured their responsiveness, made internships, and worked on real projects. Now, I’m working at <a href="https://uzinfocom.uz" target="_blank">
+        <div class="card mb-3" appDetect (isVisible)="Detect($event)">
+            <div class="mb-4 card-header"
+            [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
+            >
+                <h1 class="display-6 text-nowrap fw-bold title text-center overflow-hidden">
+                    About me
+                </h1>
+            </div>
+            <div class="card-body overflow-hidden"
+            [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
+            >
+                <p class="standart about-text px-5 fs-5 text-nowrap"
+                >
+                    I've been interested in coding for over a year. I’ve learned the basics of front-end development and continue to move
+                    <br> forward. During this time, I’ve created many web templates and ensured their responsiveness, made internships
+                    <br> and worked on real projects. Now, I’m working at <a href="https://uzinfocom.uz" target="_blank">
                         UZINFOCOM
                     </a>.
                 </p>
             </div>
             <div class="card-footer">
-                <h1 class="display-6 fw-bold title text-center">
-                    My skills
-                </h1>
-                <div class="center">
-                    <div class="row row-cols-2 justify-content-center">
-                        @for (skill of skills; track $index) {
-                            @if($index == skills.length){
-                                <div class="col">
-                                    <i class="pi pi-cloud position-relative"
-                                    role="button">
-                                        <i [class]="'bx '+ skill.icon + ' position-absolute'">
-                                            <p style="font-size:20px" class="standart text-center">{{skill.text}}</p>
-                                        </i>
-                                    </i>
-                                </div>
-                            }@else {
-                                <div class="col">
-                                    <i class="pi pi-cloud position-relative"
-                                    role="button">
-                                        <i [class]="'bx '+ skill.icon + ' position-absolute'">
-                                            <p style="font-size:20px" class="standart text-center">{{skill.text}}</p>
-                                        </i>
-                                    </i>
-                                </div>
-                            }
-                        }
-                    </div>
-                </div>
+                <app-skills [skills]="skills"></app-skills>
             </div>
         </div>
     </div>

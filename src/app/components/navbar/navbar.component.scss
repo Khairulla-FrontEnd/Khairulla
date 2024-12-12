@@ -1,5 +1,6 @@
-@import "../../../styles/dark-layout.scss";
-nav{
+@import "../../styles/dark-layout.scss";
+
+nav {
     background: $light-bg;
     @include dark-layout{
         background: $dark-bg !important;

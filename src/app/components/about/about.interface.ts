@@ -1,4 +1,5 @@
 export interface Skills {
     icon:string,
-    text:string
+    text:string,
+    link:string,
 }

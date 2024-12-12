@@ -1,35 +1,16 @@
-@import "../../../styles/dark-layout.scss";
+@import "../../styles/dark-layout.scss";
 
 #about{
     padding-block:100px;
     background:$light-bg;
     .container{
         max-width:1024px;
-        .pi-cloud{
-            animation-name:moveCloud;
-            animation-duration:3s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            transition:all 0.3s ease;
-            font-size:230px;
-            .bx{
-                font-size:80px;
-                transform: translate(-50%,-50%);
-                top:50%;left:45%;
-            }
-        }
-        .pi-cloud:hover{
-            color:$light-2;
-        }
-        @keyframes moveCloud {
-            0%{
-                transform: translateX(0px);
-            }
-            50%{
-                transform: translateX(60px);
-            }
-            100%{
-                transform: translateX(0px);
+        @media (max-width:992px){
+            .standart{
+                text-wrap: wrap !important;
+                br{
+                    display:none;
+                }
             }
         }
     }

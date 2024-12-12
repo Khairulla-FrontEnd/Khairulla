@@ -1,0 +1,36 @@
+<h1 class="display-6 fw-bold title text-center text-nowrap overflow-hidden"
+[@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
+>
+    My skills
+</h1>
+<div class="center overflow-hidden"
+[@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
+>
+    <div class="row row-cols-2 justify-content-center" appDetect (isVisible)="Detect($event)">
+        @for (skill of skills; track $index) {
+            @if($index == skills.length){
+                <div class="col">
+                    <a [href]="skill.link" target="_blank">
+                        <i class="pi pi-cloud position-relative"
+                        role="button">
+                            <i [class]="'bx '+ skill.icon + ' position-absolute'">
+                                <p style="font-size:20px" class="standart text-center">{{skill.text}}</p>
+                            </i>
+                        </i>
+                    </a>
+                </div>
+            }@else {
+                <div class="col">
+                    <a [href]="skill.link" target="_blank">
+                        <i class="pi pi-cloud position-relative"
+                        role="button">
+                            <i [class]="'bx '+ skill.icon + ' position-absolute'">
+                                <p style="font-size:20px" class="standart text-center">{{skill.text}}</p>
+                            </i>
+                        </i>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>

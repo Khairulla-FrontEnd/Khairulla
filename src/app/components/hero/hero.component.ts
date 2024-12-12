@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, NgZone } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { HeroService } from './hero.service';
@@ -37,10 +37,13 @@ import { HeroService } from './hero.service';
 
 export class HeroComponent implements AfterViewInit{
     service = inject(HeroService);
+    ngZone = inject(NgZone);
     ngAfterViewInit(): void {
-        if(window.innerWidth > 768){
-            this.service.height = '365px'
-        }
-        this.service.isOpen = true;
+        setTimeout(() => {
+            if(window.innerWidth > 768){
+                this.service.height = '365px'
+            }
+            this.service.isOpen = true;
+        })
     }
 }
