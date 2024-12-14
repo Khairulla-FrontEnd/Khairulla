@@ -1,7 +1,7 @@
 <section id="about">
     <div class="container">
         <div class="card mb-3" appDetect (isVisible)="Detect($event)">
-            <div class="card-header"
+            <div [class]="isVisible ? 'card-header' : 'card-headers'"
             [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
             >
                 <h1 class="display-6 text-nowrap fw-bold title text-center overflow-hidden">
@@ -11,6 +11,7 @@
             <div class="card-body overflow-hidden"
             [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
             >
+            <div [class]="!isVisible ? 'd-none' : 'd-block'">
                 <p class="standart about-text px-5 fs-5"
                 >
                     I've been interested in coding for over a year. I’ve learned the basics of front-end development and continue to move
@@ -19,6 +20,7 @@
                         UZINFOCOM
                     </a>.
                 </p>
+            </div>
             </div>
             <div class="card-footer">
                 <app-skills [skills]="skills"></app-skills>
