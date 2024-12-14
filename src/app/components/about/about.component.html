@@ -1,6 +1,6 @@
 <section id="about">
     <div class="container">
-        <div class="card mb-3" appDetect (isVisible)="Detect($event)">
+        <div class="card mb-3 shadow-lg" appDetect (isVisible)="Detect($event)">
             <div [class]="isVisible ? 'card-header' : 'card-headers'"
             [@visibleInvisible]="isVisible ? 'visible' : 'invisible'"
             >
