@@ -12,23 +12,29 @@
         overflow: hidden;
 
     .swiper {
-      width: 100%;
-      height: 100%;
+        width: 100%;
+        height: 100%;
       .swiper-wrapper{
         cursor:grab;
       }
       .swiper-wrapper:active{
         cursor:grabbing;
       }
-    }
-
-    
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      .swiper-slide{
+        width:500px !important;
+        @media (max-width:1024px){
+            width:300px !important;
+            img{
+                width: 100% !important;
+            }
+        }
+        @media (max-width:745px){
+            width:250px !important;
+        }
+        @media (max-width:590px){
+            width:100% !important;
+        }
+      }
     }
         .mySwiper{
             // position: relative;
