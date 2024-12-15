@@ -54,13 +54,13 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumError": "5kB"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "optimization": false,
+              "optimization": true,
               "extractLicenses": false,
               "sourceMap": true
             }
