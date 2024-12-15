@@ -8,6 +8,13 @@ $secondary:#d577f2;
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 @import './app/styles/dark-layout.scss';
 
+.swiper-pagination-bullet-active {
+    background: $light-bg;
+    @include dark-layout{
+        background: $dark-bg;
+    }
+     /* Example color for the active bullet */
+}
 .standart{
     font-family: $standart;
 }

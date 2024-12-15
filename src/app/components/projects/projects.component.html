@@ -11,26 +11,26 @@
                 <!-- PROJECT CARDS -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                          <div class="card rounded-5 overflow-hidden text-bg-secondary project">
-                             <img ngSrc="./assets/projects/project.jpg" alt="project-img" 
-                             width="900"
-                             height="300"
-                             priority 
-                             class="object-fit-cover">
-                             <div class="card-body">
-                                 <h5 class="card-title">Card title</h5>
-                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                             </div>
-                          </div>
-                      </div>
+                        @for (item of [].constructor(4); track $index) {
+                            <div class="swiper-slide">
+                              <div class="card rounded-5 overflow-hidden shadow-lg text-bg-secondary project">
+                                  <img ngSrc="./assets/projects/project.jpg" alt="project-img" 
+                                  width="900"
+                                  height="300"
+                                  priority 
+                                  class="object-fit-cover">
+                                  <div class="card-body">
+                                      <h5 class="card-title title">Card title</h5>
+                                      <p class="card-text standart">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                      <p class="card-text"><small class="text-body-secondary standart">Last updated 3 mins ago</small></p>
+                                  </div>
+                               </div>
+                            </div>
+                        }
                     </div>
-                    <div class="d-flex align-items-center icons">
-                        <p-button [raised]="true" icon="pi pi-arrow-left" severity="help" aria-label="prev" />
-                        <p-button [raised]="true" icon="pi pi-arrow-right" severity="help" aria-label="next" />
-                    </div>
+                    <div class="swiper-pagination"></div>
                   </div>
+                  
             </div>
           </div>
     </div>

@@ -1,4 +1,6 @@
 @import "../../styles/dark-layout.scss";
+@import "../../../../node_modules/swiper/swiper.scss";
+
 
 #work {
     background:$light-bg;
@@ -7,8 +9,29 @@
     }
     .container{
         max-width:1024px;
+        overflow: hidden;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      .swiper-wrapper{
+        cursor:grab;
+      }
+      .swiper-wrapper:active{
+        cursor:grabbing;
+      }
+    }
+
+    
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
         .mySwiper{
-            position: relative;
+            // position: relative;
             .icons{
                 z-index: 2;
                 position: absolute;
@@ -48,12 +71,16 @@
             background:rgba(255,255,255,0.3) !important;
             -webkit-backdrop-filter:blur(5.5px);
             backdrop-filter: blur(5.5px);
+            transition:all 0.3s ease;
             @media (max-width:1024px){
                 img{
                     width: 100%;
                     height: 200px;
                 }
             }
+        }
+        .project:hover{
+            background-color: rgba(255,255,255,0.5) !important;
         }
     }
 }

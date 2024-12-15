@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DetectDirective } from '../../shared/directives/detect.directive';
 import {
   trigger,
@@ -9,6 +9,8 @@ import {
 } from '@angular/animations';
 import { NgOptimizedImage } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 @Component({
   selector: 'app-projects',
@@ -29,8 +31,23 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent{
+export class ProjectsComponent implements OnInit{
   isVisible:boolean = false;
+  ngOnInit(): void {
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      centeredSlides: true,
+      modules:[
+        Navigation,
+        Pagination
+      ],
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
   Detect(isVisible:boolean):void{
     if(isVisible && !this.isVisible){
       this.isVisible = isVisible;
