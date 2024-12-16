@@ -7,18 +7,18 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { NgOptimizedImage } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import { SwiperCardComponent } from './components/swiper-card/swiper-card.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [
     DetectDirective,
-    NgOptimizedImage,
-    ButtonModule
+    ButtonModule,
+    SwiperCardComponent
   ],
   animations:[
     trigger('visibleInvisible',[

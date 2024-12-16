@@ -13,18 +13,12 @@
                     <div class="swiper-wrapper">
                         @for (item of [].constructor(4); track $index) {
                             <div class="swiper-slide">
-                              <div class="card shadow-lg rounded-5 overflow-hidden text-bg-secondary project">
-                                  <img ngSrc="./assets/projects/project.jpg" alt="project-img" 
-                                  width="500"
-                                  height="200"
-                                  priority 
-                                  class="card-img-top object-fit-cover">
-                                  <div class="card-body">
-                                      <h5 class="card-title title">Card title</h5>
-                                      <p class="card-text standart">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      <p class="card-text"><small class="text-body-secondary standart">Last updated 3 mins ago</small></p>
-                                  </div>
-                               </div>
+                              <app-swiper-card
+                              [imgUrl]="'./assets/projects/project.jpg'"
+                              [title]="'Card title'"
+                              [text]="'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'"
+                              [smallText]="'Last updated 3 mins ago'"
+                              ></app-swiper-card>
                             </div>
                         }
                     </div>
