@@ -34,31 +34,23 @@ import { SwiperCardComponent } from './components/swiper-card/swiper-card.compon
 export class ProjectsComponent implements OnInit{
   isVisible:boolean = false;
   ngOnInit(): void {
-    window.addEventListener('resize',() => {
-      window.location.reload();
-    })
-      let swiper;
-      if(window.innerWidth <= 590){
-        swiper = new Swiper(".mySwiper",{
-          pagination: {
-            el: ".swiper-pagination",
-          },
-        });
-      }else{
-        swiper = new Swiper(".mySwiper", {
-          slidesPerView: 2,
-          spaceBetween: 10,
-          centeredSlides: true,
-          modules:[
-            Navigation,
-            Pagination
-          ],
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
-      }
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      modules:[
+        Navigation,
+        Pagination
+      ],
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable:true
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
   }
   Detect(isVisible:boolean):void{
     if(isVisible && !this.isVisible){

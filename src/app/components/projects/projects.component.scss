@@ -1,7 +1,6 @@
 @import "../../styles/dark-layout.scss";
 @import "../../../../node_modules/swiper/swiper.scss";
 
-
 #work {
     background:$light-bg;
     @include dark-layout {
@@ -12,6 +11,9 @@
     .swiper {
         width: 100%;
         height: 100%;
+        .swiper-button-next, .swiper-button-prev{
+          color:white;
+        }
       .swiper-wrapper{
         cursor:grab;
       }
@@ -19,7 +21,6 @@
         cursor:grabbing;
       }
       .swiper-slide{
-        width:500px !important;
         @media (max-width:1024px){
             width:300px !important;
             img{
