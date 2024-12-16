@@ -34,27 +34,35 @@ import { Navigation, Pagination } from 'swiper/modules';
 export class ProjectsComponent implements OnInit{
   isVisible:boolean = false;
   ngOnInit(): void {
-    
-    if(window.innerWidth <= 590){
-      var swiper = new Swiper(".mySwiper",{
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      })
-    }else{
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        centeredSlides: true,
-        modules:[
-          Navigation,
-          Pagination
-        ],
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
+    implementSwiper();
+    window.addEventListener('resize',() => {
+      implementSwiper();
+      window.location.reload();
+    });
+    function implementSwiper(){
+      let swiper;
+      console.log(true);
+      if(window.innerWidth <= 590){
+        swiper = new Swiper(".mySwiper",{
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      }else{
+        swiper = new Swiper(".mySwiper", {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          centeredSlides: true,
+          modules:[
+            Navigation,
+            Pagination
+          ],
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      }
     }
   }
   Detect(isVisible:boolean):void{
