@@ -34,14 +34,10 @@ import { SwiperCardComponent } from './components/swiper-card/swiper-card.compon
 export class ProjectsComponent implements OnInit{
   isVisible:boolean = false;
   ngOnInit(): void {
-    implementSwiper();
     window.addEventListener('resize',() => {
-      implementSwiper();
       window.location.reload();
-    });
-    function implementSwiper(){
+    })
       let swiper;
-      console.log(true);
       if(window.innerWidth <= 590){
         swiper = new Swiper(".mySwiper",{
           pagination: {
@@ -63,7 +59,6 @@ export class ProjectsComponent implements OnInit{
           },
         });
       }
-    }
   }
   Detect(isVisible:boolean):void{
     if(isVisible && !this.isVisible){
