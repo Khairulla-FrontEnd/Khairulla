@@ -20,8 +20,8 @@ import { SkeletonModule } from 'primeng/skeleton';
       trigger('visibleInvisible',[
         state('visible',style({ width:'100%' })),
         state('invisible',style({ width:0 })),
-        transition('visible => invisible',[animate('1s')]),
-        transition('invisible => visible',[animate('1s')])
+        transition('visible => invisible',[animate('2s')]),
+        transition('invisible => visible',[animate('2s')])
       ])
     ],
   templateUrl: './contact.component.html',
@@ -29,10 +29,22 @@ import { SkeletonModule } from 'primeng/skeleton';
 })
 export class ContactComponent {
   isVisible:boolean = false;
+  isVisible2:boolean = false;
+  isVisible3:boolean = false;
   isLoading:boolean = true;
   Detect(isVisible:boolean):void{
     if(isVisible && !this.isVisible){
       this.isVisible = isVisible;
+    }
+  }
+  Detect2(isVisible:boolean):void{
+    if(isVisible && !this.isVisible){
+      this.isVisible2 = isVisible;
+    }
+  }
+  Detect3(isVisible:boolean):void{
+    if(isVisible && !this.isVisible){
+      this.isVisible3 = isVisible;
     }
   }
   handleLoading():void{

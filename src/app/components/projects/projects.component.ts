@@ -24,8 +24,8 @@ import { SwiperCardComponent } from './components/swiper-card/swiper-card.compon
     trigger('visibleInvisible',[
       state('visible',style({ width:'100%' })),
       state('invisible',style({ width:0 })),
-      transition('visible => invisible',[animate('1s')]),
-      transition('invisible => visible',[animate('1s')])
+      transition('visible => invisible',[animate('2s')]),
+      transition('invisible => visible',[animate('2s')])
     ])
   ],
   templateUrl: './projects.component.html',

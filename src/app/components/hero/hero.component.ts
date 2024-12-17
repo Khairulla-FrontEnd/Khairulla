@@ -29,8 +29,8 @@ import { HeroService } from './hero.service';
             state('open',style({
                 height:0
             })),
-            transition('open => close',[animate('1s')]),
-            transition('close => open',[animate('1s')])
+            transition('open => close',[animate('2s')]),
+            transition('close => open',[animate('2s')])
         ])
     ],
 })
