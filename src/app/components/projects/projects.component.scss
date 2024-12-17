@@ -20,20 +20,6 @@
       .swiper-wrapper:active{
         cursor:grabbing;
       }
-      .swiper-slide{
-        @media (max-width:1024px){
-            width:300px !important;
-            img{
-                width: 100% !important;
-            }
-        }
-        @media (max-width:745px){
-            width:250px !important;
-        }
-        @media (max-width:590px){
-            width:100% !important;
-        }
-      }
     }
     }
 }

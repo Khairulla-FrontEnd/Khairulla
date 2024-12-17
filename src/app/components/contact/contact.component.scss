@@ -1,0 +1,12 @@
+@import "../../styles/dark-layout.scss";
+
+#contact{
+    background:$light-bg;
+    padding-block:100px;
+    @include dark-layout{
+        background:$dark-bg;
+    }
+    .container{
+        max-width:1024px;
+    }
+}

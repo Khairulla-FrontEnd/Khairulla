@@ -46,7 +46,8 @@ export class ProjectsComponent implements OnInit{
       },
       pagination: {
         el: ".swiper-pagination",
-        clickable:true
+        clickable:true,
+        dynamicBullets:true,
       },
       mousewheel: true,
       keyboard: true,

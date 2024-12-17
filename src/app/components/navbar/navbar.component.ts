@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 
 export class NavbarComponent implements OnInit{
     active:number = 0;
-    links:string[] = ['HOME','ABOUT ME','WORK', 'CONTACT'];
+    links:string[] = ['HOME','ABOUT','WORK', 'CONTACT'];
     themeOptions:{ label:string,value:string,icon:string }[] = [
         {
             label:'Light',
