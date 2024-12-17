@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgOptimizedImage } from "@angular/common";
 import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
@@ -41,9 +41,6 @@ export class NavbarComponent implements OnInit{
     }
     changeTheme(theme:string){
         localStorage.setItem('theme',theme);
-        window.location.reload();
-    }
-    reloadPage():void {
         window.location.reload();
     }
     setActive(index:number):void{

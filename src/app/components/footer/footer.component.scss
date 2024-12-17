@@ -1,0 +1,8 @@
+@import "../../styles/dark-layout.scss";
+
+footer{
+    background:$light-bg;
+    @include dark-layout {
+        background:$dark-bg;
+    }
+}

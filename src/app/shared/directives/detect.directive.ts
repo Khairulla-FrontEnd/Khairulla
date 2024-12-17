@@ -11,10 +11,17 @@ export class DetectDirective {
     
     constructor(private el: ElementRef) { }
 
-    @HostListener('window:scroll',['$event'])
-    onScroll():void {
+    emitVisibility():void{
         const rect = this.el.nativeElement.getBoundingClientRect();
         const isVisible = rect.top <= window.innerHeight;
         this.isVisible.emit(isVisible);
     }
+    @HostListener('window:scroll',['$event'])
+    onScroll():void {
+        this.emitVisibility();
+    };
+    @HostListener('window:load',['$event'])
+    onLoad():void{
+        this.emitVisibility();
+    };
 }
