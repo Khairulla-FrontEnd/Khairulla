@@ -1,6 +1,7 @@
 @import "../../styles/dark-layout.scss";
 
 nav {
+    transition:all 1s ease;
     background: $light-bg;
     @include dark-layout{
         background: $dark-bg !important;

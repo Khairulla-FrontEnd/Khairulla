@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { NgOptimizedImage } from "@angular/common";
 import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 export class NavbarComponent implements OnInit{
     active:number = 0;
     links:string[] = ['HOME','ABOUT','WORK', 'CONTACT'];
+    isScrolled:boolean = false;
     themeOptions:{ label:string,value:string,icon:string }[] = [
         {
             label:'Light',
@@ -33,6 +34,14 @@ export class NavbarComponent implements OnInit{
         },
     ];
     value:string | null = '';
+    @HostListener('window:scroll',['$event'])
+    onScroll(event:Event):void{
+        if(window.scrollY !== 0){
+            this.isScrolled = true;
+        }else{
+            this.isScrolled = false;
+        }
+    }
     ngOnInit(): void {
         this.value = localStorage.getItem('theme');
         if(!this.value){

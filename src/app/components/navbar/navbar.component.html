@@ -1,4 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-md bg-body-secondary">
+<nav #nav class="navbar fixed-top navbar-expand-md bg-body-secondary"
+[class]="isScrolled ? 'shadow-lg' : 'no-shadow'"
+>
     <div class="container">
       <a class="navbar-brand" role="button"
       href="https://khairulla.vercel.app"
