@@ -7,3 +7,20 @@
 .project:hover{
     background-color: rgba(255,255,255,0.5) !important;
 }
+img{
+    filter:brightness(0.4);
+}
+
+@media (max-width:510px) {
+    img{
+        height:600px;
+    }
+    .flex-wrap{
+        justify-content: center !important;
+    }
+}
+@media (max-width:350px) {
+    .flex-wrap{
+        gap: 20px !important;
+    }
+}

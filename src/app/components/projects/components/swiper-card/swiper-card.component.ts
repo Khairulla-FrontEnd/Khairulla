@@ -8,13 +8,15 @@ import {
     transition,
     animate,
   } from '@angular/animations';
+import { ButtonModule } from "primeng/button";
 
 @Component({
     selector:'app-swiper-card',
     standalone:true,
     imports:[
         NgOptimizedImage,
-        DetectDirective
+        DetectDirective,
+        ButtonModule,
     ],
     animations:[
         trigger('visibleInvisible',[
@@ -32,7 +34,9 @@ export class SwiperCardComponent {
     @Input() imgUrl:string = '';
     @Input() title:string = '';
     @Input() text:string = '';
-    @Input() smallText:string = '';
+    @Input() frameworks:string[] = [];
+    @Input() url:string = '';
+    @Input() github:string = '';
     isVisible:boolean = false;
     Detect(isVisible:boolean):void{
         if(isVisible && !this.isVisible){

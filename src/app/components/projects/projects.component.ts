@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import { SwiperCardComponent } from './components/swiper-card/swiper-card.component';
+import { Project } from './projects.interface';
 
 @Component({
   selector: 'app-projects',
@@ -33,6 +34,19 @@ import { SwiperCardComponent } from './components/swiper-card/swiper-card.compon
 })
 export class ProjectsComponent implements OnInit{
   isVisible:boolean = false;
+
+  projects:Project[] = [
+    {
+      id:0,
+      title:'E-Commerce Store',
+      description:'This project, completed over three weeks, features a fully responsive design with product categorization and search functionality. Developed using Angular and third-party libraries, I took the lead on the frontend, while my teammate helped with the initial setup. I also implemented a free backend service to support functionality. This project demonstrates my ability to create dynamic, user-friendly e-commerce platforms.',
+      imgUrl:'./assets/projects/project.png',
+      github:'https://github.com/Khairulla-FrontEnd/E-Commerce-Angular',
+      url:'https://khair-creed.vercel.app',
+      frameworks:['Angular','Bootstrap','PrimeNG']
+    }
+  ]
+
   ngOnInit(): void {
     var swiper = new Swiper(".mySwiper", {
       cssMode: true,

@@ -11,13 +11,15 @@
                 <!-- PROJECT CARDS -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        @for (item of [].constructor(4); track $index) {
+                        @for (project of projects; track $index) {
                             <div class="swiper-slide">
                               <app-swiper-card
-                              [imgUrl]="'./assets/projects/project.jpg'"
-                              [title]="'Card title'"
-                              [text]="'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'"
-                              [smallText]="'Last updated 3 mins ago'"
+                              [imgUrl]="project.imgUrl"
+                              [title]="project.title"
+                              [text]="project.description"
+                              [frameworks]="project.frameworks"
+                              [github]="project.github"
+                              [url]="project.url"
                               ></app-swiper-card>
                             </div>
                         }
