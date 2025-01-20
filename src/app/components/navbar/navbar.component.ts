@@ -3,6 +3,8 @@ import { NgOptimizedImage } from "@angular/common";
 import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api'; 
 
 @Component({
     selector:'app-navbar',
@@ -13,14 +15,19 @@ import { FormsModule } from '@angular/forms';
         NgOptimizedImage,
         ButtonModule,
         SelectButtonModule,
-        FormsModule
-    ]
+        FormsModule,
+        ToastModule
+    ],
+   providers:[
+     MessageService
+   ]
 })
 
 export class NavbarComponent implements OnInit{
     active:number = 0;
     links:string[] = ['HOME','ABOUT','WORK', 'CONTACT'];
     isScrolled:boolean = false;
+    constructor(private messageService:MessageService) {}
     themeOptions:{ label:string,value:string,icon:string }[] = [
         {
             label:'Light',
@@ -54,5 +61,8 @@ export class NavbarComponent implements OnInit{
     }
     setActive(index:number):void{
         this.active = index;
+    }
+    show():void{
+        this.messageService.add({ severity:'info', summary:'Oops...', detail:'No CV at the moment', life:3000 });
     }
 }
